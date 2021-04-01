@@ -37,7 +37,7 @@ with microphone as source:
     speak('Tudo bem, estou iniciando!')
 
     if type == 'album':
-      speak('Iniciando o albúm: ' + search)
+      speak('Iniciando o álbum: ' + search)
       uri = get_album_uri(search)
       play_album(uri)
       
@@ -45,6 +45,8 @@ with microphone as source:
       speak('Iniciando a música: ' + search)
       uri = get_track_uri(search)
       play_track(uri)
+    else:
+      speak('Desculpe, comando não entendido')
 
   except sr.RequestError:
     speak('Perdão, não consigo te ajudar agora!')
